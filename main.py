@@ -1,5 +1,13 @@
-import sys, intro
+import sys, os, intro
 from config import *
+
+dirpath = os.getcwd()
+sys.path.append(dirpath)
+
+if getattr(sys, "frozen", False):
+    os.chdir(sys._MEIPASS)
+
+
 
 pygame.init()
 clock = pygame.time.Clock
